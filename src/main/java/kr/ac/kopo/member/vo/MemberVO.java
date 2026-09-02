@@ -1,4 +1,4 @@
-package kr.ac.kopo.vo;
+package kr.ac.kopo.member.vo;
 
 public class MemberVO {
 

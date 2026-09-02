@@ -1,4 +1,4 @@
-package kr.ac.kopo.controller;
+package kr.ac.kopo.member.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jakarta.validation.Valid;
-import kr.ac.kopo.board.service.MemberService;
-import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.member.service.MemberService;
+import kr.ac.kopo.member.vo.MemberVO;
 
 /**
  * 회원 요청 처리 컨트롤러

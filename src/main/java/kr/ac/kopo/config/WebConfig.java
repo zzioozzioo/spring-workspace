@@ -10,7 +10,7 @@ import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
-@ComponentScan(basePackages = {"kr.ac.kopo.controller"})
+@ComponentScan(basePackages = {"kr.ac.kopo"})
 @EnableWebMvc
 @Configuration
 public class WebConfig implements WebMvcConfigurer {

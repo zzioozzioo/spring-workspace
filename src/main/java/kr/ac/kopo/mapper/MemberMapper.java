@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.member.vo.MemberVO;
 
 @Mapper
 public interface MemberMapper {

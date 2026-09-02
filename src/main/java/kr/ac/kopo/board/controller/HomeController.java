@@ -1,4 +1,4 @@
-package kr.ac.kopo.controller;
+package kr.ac.kopo.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

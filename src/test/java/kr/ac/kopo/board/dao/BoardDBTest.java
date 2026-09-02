@@ -12,8 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import kr.ac.kopo.board.vo.BoardVO;
 import kr.ac.kopo.config.DBConfig;
-import kr.ac.kopo.vo.BoardVO;
 
 @SpringJUnitConfig(classes = {DBConfig.class})
 public class BoardDBTest {
@@ -38,5 +38,9 @@ public class BoardDBTest {
 		for(BoardVO board : list) {
 			System.out.println(board);
 		}
+	}
+	
+	public void 상세게시글조회() throws Exception {
+		System.out.println(boardDao.selectByNo(12));
 	}
 }

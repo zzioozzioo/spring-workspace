@@ -1,4 +1,4 @@
-package kr.ac.kopo.board.dao;
+package kr.ac.kopo.member.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.mapper.MemberMapper;
-import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.member.vo.MemberVO;
 
 /**
  * Oracle DB에서 게시판 테이블에서 CRUD 기능 클래스

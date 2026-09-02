@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kr.ac.kopo.vo.BoardVO;
+import kr.ac.kopo.board.vo.BoardVO;
 
 /**
  * Oracle DB에서 게시판 테이블(tbl_board)에서 CRUD 기능 클래스(JDBC)
@@ -135,6 +135,12 @@ public class BoardDAOImpl implements BoardDAO {
 				}
 			}
 		}
+	}
+
+	@Override
+	public BoardVO selectByNo(int boardNo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -10,27 +10,23 @@ import kr.ac.kopo.board.vo.BoardVO;
 import kr.ac.kopo.mapper.BoardMapper;
 
 /**
- * MyBatis (Mapper 클래스 활용) 게시판 CRUD
+ * MyBatis (mapper xml 활용) 게시판 CRUD
  */
 
-//@Repository
-public class BoardDAOImpl02 implements BoardDAO {
-	
+@Repository
+public class BoardDAOImpl03 implements BoardDAO {
+
 	@Autowired
 	private BoardMapper boardMapper;
 	
 	@Autowired
 	private SqlSessionTemplate sqlSessionTemplate;
 	
-	public BoardDAOImpl02(BoardMapper boardMapper) {
-		super();
-		this.boardMapper = boardMapper;
-	}
-
 	@Override
 	public List<BoardVO> selectAll() {
-		System.out.println("전체 게시글 조회");
-		return boardMapper.selectAll();
+		System.out.println("BoardDAOImpl03 -> selectAll");
+		List<BoardVO> boardList = sqlSessionTemplate.selectList("board.dao.BoardDAO.selectAll");
+		return boardList;
 	}
 
 	@Override
@@ -42,4 +38,5 @@ public class BoardDAOImpl02 implements BoardDAO {
 	public BoardVO selectByNo(int boardNo) {
 		return boardMapper.selectByNo(boardNo);
 	}
+
 }

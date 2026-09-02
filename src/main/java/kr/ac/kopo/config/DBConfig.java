@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @MapperScan("kr.ac.kopo.mapper")
 @PropertySource("classpath:/config/db.properties")
@@ -50,7 +51,13 @@ public class DBConfig {
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(dataSource);
 		
-		factoryBean.setTypeAliasesPackage("kr.ac.kopo.*.vo");
+		// xml mapper 파일의 location
+		factoryBean.setMapperLocations(
+				new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml")
+		);
+		
+		
+//		factoryBean.setTypeAliasesPackage("kr.ac.kopo.*.vo");
 		return factoryBean.getObject();
 	}
 	

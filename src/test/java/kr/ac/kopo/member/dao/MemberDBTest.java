@@ -12,9 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import kr.ac.kopo.board.dao.MemberDAO;
 import kr.ac.kopo.config.DBConfig;
-import kr.ac.kopo.vo.MemberVO;
+import kr.ac.kopo.member.vo.MemberVO;
 
 @SpringJUnitConfig(classes = {DBConfig.class})
 public class MemberDBTest {

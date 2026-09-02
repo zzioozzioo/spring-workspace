@@ -1,4 +1,4 @@
-package kr.ac.kopo.controller;
+package kr.ac.kopo.board.controller;
 
 import java.util.List;
 
@@ -8,12 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 import kr.ac.kopo.board.service.BoardService;
-import kr.ac.kopo.vo.BoardVO;
+import kr.ac.kopo.board.vo.BoardVO;
 
 @Controller
 public class BoardController {
@@ -71,8 +73,27 @@ public class BoardController {
 		return "redirect:/board";
 	}
 	
-	@RequestMapping("/board/detail")
-	public String detail() {
+	// 23번 게시글 상세 조회 1
+	// http://localhost:8080/board-mvc/board/detail?no=23
+	@GetMapping("/board/detail")
+	public String detail(@RequestParam("no") int boardNo, Model model) throws Exception {
+		
+		BoardVO board = boardService.getBoardByBoardNo(boardNo);
+		
+		model.addAttribute("board", board);
+		
+		return "board/detail";
+	}
+	
+	// 23번 게시글 상세 조회 2 -> 파라미터만 변경됨
+	// http://localhost:8080/board-mvc/board/23
+	@GetMapping("/board/{no}")
+public String detail2(@PathVariable("no") int boardNo, Model model) throws Exception {
+		
+		BoardVO board = boardService.getBoardByBoardNo(boardNo);
+		
+		model.addAttribute("board", board);
+		
 		return "board/detail";
 	}
 }

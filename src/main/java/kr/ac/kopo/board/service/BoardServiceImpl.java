@@ -6,8 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.board.dao.BoardDAO;
-import kr.ac.kopo.board.dao.BoardDAOImpl;
-import kr.ac.kopo.vo.BoardVO;
+import kr.ac.kopo.board.vo.BoardVO;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -25,6 +24,11 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void addNewBoard(BoardVO board) throws Exception {
 		boardDao.insert(board);
+	}
+
+	@Override
+	public BoardVO getBoardByBoardNo(int boardNo) throws Exception {
+		return boardDao.selectByNo(boardNo);
 	}
 
 }
