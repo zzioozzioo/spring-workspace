@@ -13,7 +13,7 @@ import kr.ac.kopo.mapper.BoardMapper;
  * MyBatis (mapper xml 활용) 게시판 CRUD
  */
 
-@Repository
+//@Repository
 public class BoardDAOImpl03 implements BoardDAO {
 
 	@Autowired

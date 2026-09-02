@@ -15,4 +15,9 @@ public interface MemberDAO {
 	 * 전체 회원 조회 기능
 	 */
 	List<MemberVO> selectAll();
+	
+	/**
+	 * 회원 정보 상세 조회 기능
+	 */
+	MemberVO selectById(String memberId);
 }

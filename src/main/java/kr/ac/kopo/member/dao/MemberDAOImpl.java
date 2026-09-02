@@ -38,6 +38,11 @@ public class MemberDAOImpl implements MemberDAO {
 	public List<MemberVO> selectAll() {
 		return memberMapper.selectAll();
 	}
+
+	@Override
+	public MemberVO selectById(String memberId) {
+		return memberMapper.selectById(memberId);
+	}
 	
 //	@Override
 //	public List<MemberVO> selectAll() {

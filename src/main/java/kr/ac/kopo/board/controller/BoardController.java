@@ -88,12 +88,12 @@ public class BoardController {
 	// 23번 게시글 상세 조회 2 -> 파라미터만 변경됨
 	// http://localhost:8080/board-mvc/board/23
 	@GetMapping("/board/{no}")
-public String detail2(@PathVariable("no") int boardNo, Model model) throws Exception {
-		
-		BoardVO board = boardService.getBoardByBoardNo(boardNo);
-		
-		model.addAttribute("board", board);
-		
-		return "board/detail";
-	}
+	public String detail2(@PathVariable("no") int boardNo, Model model) throws Exception {
+			
+			BoardVO board = boardService.getBoardByBoardNo(boardNo);
+			
+			model.addAttribute("board", board);
+			
+			return "board/detail";
+		}
 }

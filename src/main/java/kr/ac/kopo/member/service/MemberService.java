@@ -8,4 +8,5 @@ public interface MemberService {
 
 	void registerMember(MemberVO member) throws Exception;
 	List<MemberVO> getMemberList() throws Exception;
+	MemberVO getMemberById(String memberId) throws Exception;
 }

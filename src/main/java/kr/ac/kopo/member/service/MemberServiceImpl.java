@@ -26,4 +26,10 @@ public class MemberServiceImpl implements MemberService {
 		List<MemberVO> memberList = memberDao.selectAll();
 		return memberList;
 	}
+
+	@Override
+	public MemberVO getMemberById(String memberId) throws Exception {
+		return memberDao.selectById(memberId);
+	}
+
 }

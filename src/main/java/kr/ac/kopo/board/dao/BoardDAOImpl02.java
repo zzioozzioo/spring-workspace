@@ -13,7 +13,7 @@ import kr.ac.kopo.mapper.BoardMapper;
  * MyBatis (Mapper 클래스 활용) 게시판 CRUD
  */
 
-//@Repository
+@Repository
 public class BoardDAOImpl02 implements BoardDAO {
 	
 	@Autowired
@@ -42,4 +42,6 @@ public class BoardDAOImpl02 implements BoardDAO {
 	public BoardVO selectByNo(int boardNo) {
 		return boardMapper.selectByNo(boardNo);
 	}
+	
+	
 }

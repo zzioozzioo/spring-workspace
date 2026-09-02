@@ -8,8 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 import kr.ac.kopo.member.service.MemberService;
@@ -58,4 +60,14 @@ public class MemberController {
 		
 		return "member/list";
 	}	
+	
+	// 회원 정보 상세 조회 요청
+	@GetMapping("/member/{id}")
+	public String detail(@PathVariable("id") String memberId, Model model) throws Exception {
+		MemberVO member = memberService.getMemberById(memberId);
+		
+		model.addAttribute("member", member);
+		
+		return "member/detail";
+	}
 }
