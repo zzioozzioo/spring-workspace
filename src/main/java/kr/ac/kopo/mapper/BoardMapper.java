@@ -1,0 +1,24 @@
+package kr.ac.kopo.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+
+import kr.ac.kopo.vo.BoardVO;
+
+public interface BoardMapper {
+	
+	@Select("""
+			select no, title, writer, to_char(reg_date, 'yyyy-mm-dd') as "regDate"
+			from tbl_board
+			order by no desc
+			""")
+	List<BoardVO> selectAll();
+
+	@Insert("""
+			insert into tbl_board(no, title, writer, content)
+			values(seq_tbl_board_no.nextval, #{title}, #{writer}, #{content})
+			""")
+	void insert(BoardVO board);
+}
